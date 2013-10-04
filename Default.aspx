@@ -22,9 +22,17 @@ Loan Term (Yrs): <asp:TextBox ID="tbLoanTerm" runat="server" ></asp:TextBox>
 <br /><br />
 <asp:Button ID="btnCalcPmt" runat="server" Text="Calculate" />
 <br /><br />
-Monthly Payment: &nbsp; <asp:Label ID="lblMonthlyPmt" runat="server"></asp:Label>
-<br /><br />
-<asp:GridView ID="loanGridView" runat="server" />
+
+<% If Not IsPostBack Then%>
+    <p> Welcome to my mortage calculator. Please complete the fields above to have your monthly payment and loan calculated for you.</p>
+
+<% Else %>
+    <br />
+ 
+    Monthly Payment: &nbsp; <asp:Label ID="lblMonthlyPmt" runat="server"></asp:Label>
+    <br /><br />
+    <asp:GridView ID="loanGridView" runat="server" />
+<%End If%>
 </div>
 </form>
 </body>
